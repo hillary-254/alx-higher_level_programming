@@ -3,6 +3,7 @@ from calculator_1 import add, sub, mul, div
 
 if __name__ == "__main__":
     """
+
     perform addition, subtraction, multiplication and divison of two numbers
     """
 
@@ -10,13 +11,13 @@ if __name__ == "__main__":
     b = 5
 
     res = add(a, b)
-    print(f"{a} + {b} = {res}")
+    print("{:d} + {:d} = {:d}".format(a, b, res))
 
     res = sub(a, b)
-    print(f"{a} - {b} = {res}")
+    print("{:d} - {:d} = {:d}".format(a, b, res))
 
     res = mul(a, b)
-    print(f"{a} * {b} = {res}")
+    print("{:d} * {:d} = {:d}".format(a, b, res))
 
     res = div(a, b)
-    print(f"{a} / {b} = {res}")
+    print("{:d} / {:d} = {:d}".format(a, b, res))
