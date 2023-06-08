@@ -3,9 +3,14 @@ from sys import argv
 from calculator_1 import add, sub, mul, div
 
 if __name__ == "__main__":
+
+    """
+    Performs basic operations like addition, substraction,
+    multiplication and division between two numbers.
+    """
     arg_size = len(argv) - 1
 
-    if arg_size != 4:
+    if arg_size == 3:
         a = int(argv[1])
         op = argv[2]
         b = int(argv[3])
