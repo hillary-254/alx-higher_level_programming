@@ -1,35 +1,35 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 from calculator_1 import add, sub, mul, div
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("The argument list size might be too few or more")
-        sys.exit(1)
+    arg_size = len(argv) - 1
 
-    a = int(sys.argv[1])
-    op = sys.argv[2]
-    b = int(sys.argv[3])
+    if arg_size != 4:
+        a = int(argv[1])
+        op = argv[2]
+        b = int(argv[3])
 
     if op == "+":
         print('{:d} + {:d} = {:d}'.format(a, b, add(a, b)))
-        sys.exit(0)
+        exit(0)
 
     elif op == "-":
         print('{:d} - {:d} = {:d}'.format(a, b, sub(a, b)))
-        sys.exit(0)
+        exit(0)
 
     elif op == "*":
         print('{:d} * {:d} = {:d}'.format(a, b, mul(a, b)))
-        sys.exit(0)
+        exit(0)
 
     elif op == "/":
         print('{:d} / {:d} = {:d}'.format(a, b, div(a, b)))
-        sys.exit(0)
+        exit(0)
 
     else:
-        print("The operator is unknown")
-        sys.exit(1)
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
 
-    # print(f"{a} {op} {b} = {res}")
-    # sys.exit(0)
+else:
+    print('Usage: ./100-my_calculator.py <a> <operator> <b>')
+    exit(1)
