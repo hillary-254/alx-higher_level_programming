@@ -16,19 +16,23 @@ if __name__ == "__main__":
         b = int(argv[3])
 
     if op == "+":
-        print('{:d} + {:d} = {:d}'.format(a, b, add(a, b)))
+        result = add(a, b)
+        print('{:d} + {:d} = {:d}'.format(a, b, result))
         exit(0)
 
     elif op == "-":
-        print('{:d} - {:d} = {:d}'.format(a, b, sub(a, b)))
+        result = sub(a, b)
+        print('{:d} - {:d} = {:d}'.format(a, b, result))
         exit(0)
 
     elif op == "*":
-        print('{:d} * {:d} = {:d}'.format(a, b, mul(a, b)))
+        result = mul(a, b)
+        print('{:d} * {:d} = {:d}'.format(a, b, result))
         exit(0)
 
     elif op == "/":
-        print('{:d} / {:d} = {:d}'.format(a, b, div(a, b)))
+        result = div(a, b)
+        print('{:d} / {:d} = {:d}'.format(a, b, result))
         exit(0)
 
     else:
