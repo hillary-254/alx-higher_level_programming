@@ -1,6 +1,11 @@
 #!/usr/bin/python3
+
+"""Represents a square."""
+
+
 class Square:
-    """Represents a square."""
+    """square class
+    """
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the Square instance."""
