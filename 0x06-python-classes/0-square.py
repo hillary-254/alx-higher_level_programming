@@ -7,4 +7,6 @@ This class don't do anything for the moment
 
 
 class Square:
+    """square class
+    """
     pass
