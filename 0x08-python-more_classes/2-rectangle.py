@@ -6,7 +6,7 @@ Rectangle Module
 
 class Rectangle:
     """
-    This class represents a rectangle.
+    A class that represents a rectangle.
 
     Attributes:
         width (int): The width of the rectangle.
@@ -45,12 +45,8 @@ class Rectangle:
         Raises:
             TypeError: If the width is not an integer.
             ValueError: If the width is less than 0.
-
         """
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
+        self.__check_valid_width(value)
         self.__width = value
 
     @property
@@ -74,13 +70,41 @@ class Rectangle:
         Raises:
             TypeError: If the height is not an integer.
             ValueError: If the height is less than 0.
-
         """
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be >= 0")
+        self.__check_valid_height(value)
         self.__height = value
+
+    def __check_valid_width(self, width):
+        """
+        Check if the width is a valid integer.
+
+        Args:
+            width (int): The width of the rectangle.
+
+        Raises:
+            TypeError: If width is not an integer.
+            ValueError: If width is less than 0.
+        """
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+
+    def __check_valid_height(self, height):
+        """
+        Check if the height is a valid integer.
+
+        Args:
+            height (int): The height of the rectangle.
+
+        Raises:
+            TypeError: If height is not an integer.
+            ValueError: If height is less than 0.
+        """
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
 
     def area(self):
         """
