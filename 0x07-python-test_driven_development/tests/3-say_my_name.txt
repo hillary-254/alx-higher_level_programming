@@ -1,0 +1,79 @@
+===============================
+3. Say my name module
+===============================
+
+Import module:
+==============
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Function:
+=========
+Function that prints 'My name is <first name> <last name>'.
+
+
+TC: Code without Parameters
+=========================
+
+Test case 1: A test case without parameters
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+TC: Code with correct Parameters
+=========================
+
+Test case 1: A test case to print a correct name
+
+    >>> say_my_name("John")
+    My name is John 
+
+Test case 2: A test case to print a correct name
+
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
+
+Test case 3: A test case with both empty
+
+    >>> say_my_name("", )
+    My name is  
+
+Test case 4: A test case with both empty 
+
+    >>> say_my_name('\n', '\n')
+    My name is 
+    <BLANKLINE>
+    <BLANKLINE>
+
+Test case 5: A test case with many spaces 
+
+    >>> say_my_name(" ", "Santiago")
+    My name is   Santiago
+
+Test case 6: A test case with only spaces 
+
+    >>> say_my_name(" ", " ")
+    My name is    
+
+
+TC: Code with Incorrect Parameters
+=====================
+
+Test case 1: A test case with the first name as integer
+
+    >>> say_my_name(1, "White")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Test case 2: A test case with the last name as integer
+
+    >>> say_my_name("White", 1)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Test case 3: A test case with both names as integer
+
+    >>> say_my_name(12, 12)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
