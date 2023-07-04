@@ -1,0 +1,122 @@
+===============================
+0. Integer addition module
+===============================
+
+Import module:
+==============
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+
+Function:
+=========
+This function adds two integers.
+
+
+Operations:
+===========
+The parameters, ‘a’ and ‘b’ must be integers or floats, otherwise
+raise a TypeError exception
+with the message 'a must be an integer' or 'b must be an integer'.
+
+
+TC: Positive Numbers
+====================
+
+Test case 1: A test case between two integers
+
+    >>> add_integer(8, 5)
+    13
+
+Test case 2: A test case between two floats
+
+    >>> add_integer(15.0, 15.0)
+    30
+
+Test case 3: A test case between integer and float
+
+    >>> add_integer(7, 8.0)
+    15
+
+Test case 4: A test case between float and integer
+
+    >>> add_integer(5.0, 10)
+    15
+
+
+TC: Negative Numbers
+====================
+
+Test case 1: A test case between two negatives integers
+
+    >>> add_integer(-7, -9)
+    -16
+
+Test case 2: A test case between two negatives floats
+
+    >>> add_integer(-5.5, -3)
+    -8
+
+Test case 3: A test case between float and negative integer
+
+    >>> add_integer(10.5, -5)
+    5
+
+
+TC: Non-Numbers
+======================
+
+Test case 1: A test case with the first parameter of type 'None'
+
+    >>> add_integer(None, 6)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Test case 2: A test case with the second parameter of type 'None'
+
+    >>> add_integer(5, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+Test case 3: A test case with the first parameter of type 'list'
+
+    >>> add_integer([7, 4, 2], 15)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Test case 4: A test case with the second parameter of type 'str'
+
+    >>> add_integer(1, "hello")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+Test case 5: A test case to check the returned integer type
+
+    >>> type(add_integer(7, 3))
+    <class 'int'>
+
+
+TC: Non-Parameters
+===================
+
+Test case 1: A test case without parameters
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test case 2: A test case for an argument with no assigned value
+
+    >>> add_integer(a, 123)
+    Traceback (most recent call last):
+    NameError: name 'a' is not defined
+
+Test case 3: A test case for using the default value of parameter 'b'
+
+    >>> add_integer(10)
+    108
+
+Test case 4: A test case for using the default value of parameter 'b'
+with the float parameter 'a'
+
+    >>> add_integer(2.0, )
+    100
