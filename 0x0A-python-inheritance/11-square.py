@@ -1,18 +1,20 @@
 #!/usr/bin/python3
 Rectangle = __import__('9-rectangle').Rectangle
+"""module with class BaseGeometry"""
+
+
 class Square(Rectangle):
     """
     A class representing a square.
 
     This class inherits from the Rectangle class and provides functionality specific to squares.
 
-    Attributes:
-        None
-
     Methods:
-        __init__(self, size): Initializes a Square instance with the given size.
+        __init__(self, size): Initializes a Square instance with
+        the given size.
         area(self): Calculates and returns the area of the square.
-        __str__(self): Returns a string representation of the square in the format [Square] <size>/<size>.
+        __str__(self): Returns a string representation of the square in the 
+        format [Square] <size>/<size>.
 
     """
     def __init__(self, size):

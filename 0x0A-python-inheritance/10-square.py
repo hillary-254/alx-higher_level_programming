@@ -6,15 +6,6 @@ Rectangle = __import__('9-rectangle').Rectangle
 class Square(Rectangle):
     """
     A class representing a square.
-
-    This class inherits from the Rectangle class
-    and provides functionality specific to squares.
-    Methods:
-        __init__(self, size): Initializes a Square instance with the
-        given size.
-        __str__(self): Returns a string representation of the square in the
-        format [Square] <size>/<size>.
-
     """
     def __init__(self, size):
         """
