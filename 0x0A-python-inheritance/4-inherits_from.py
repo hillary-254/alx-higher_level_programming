@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""module with method inherits_from"""
+
+
 def inherits_from(obj, a_class):
     """
 
@@ -10,8 +13,5 @@ def inherits_from(obj, a_class):
         True if object is instance of a class inherited
         directly, false otherwise
     """
-    if isinstance(obj, a_class) and \
-       issubclass(a_class, obj.__class__) is False:
-        return True
 
-    return False
+    return False if type(obj) is a_class else isinstance(obj, a_class)

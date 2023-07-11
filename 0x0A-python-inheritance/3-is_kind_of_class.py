@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""module with method is_kind_of_class"""
+
+
 def is_kind_of_class(obj, a_class):
     """
     Checks if `obj` is same class or inherit from `a_class`
