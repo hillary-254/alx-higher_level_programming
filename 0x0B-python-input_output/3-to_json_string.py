@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-import json
 """Module that returns JSON of an object"""
 
+
+import json
 
 def to_json_string(my_obj):
     """
