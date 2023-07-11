@@ -13,6 +13,6 @@ def read_file(filename=""):
     Returns:
         None
     """
-    with open(filename, encoding='utf-8') as file:
-        for line in file:
-            print(line, end='')
+    with open(filename) as f:
+        text = f.read()
+        print(text, end="")
