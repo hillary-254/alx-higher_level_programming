@@ -1,26 +1,42 @@
 #!/usr/bin/python3
+"""
+This script  takes in the name of a state
+as an argument and lists all cities of that
+state, using the database `hbtn_0e_4_usa`.
+"""
+
 import MySQLdb
-import sys
+from sys import argv
 
-if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state_name = sys.argv[4]
+if __name__ == '__main__':
+    """
+    Access to the database and get the cities
+    from the database.
+    """
 
-    db = MySQLdb.connect(host="localhost",
-                         port=3306,
-                         user=username,
-                         passwd=password,
-                         db=database)
+    db = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
+                         passwd=argv[2], db=argv[3])
 
-    cursor = db.cursor()
-    cursor.execute("SELECT GROUP_CONCAT(cities.name SEPARATOR ', ') FROM cities\
-                    JOIN states ON cities.state_id = states.id\
-                    WHERE states.name=%s ORDER BY cities.id ASC", (state_name,))
+    with db.cursor() as cur:
+        cur.execute("""
+            SELECT
+                cities.id, cities.name
+            FROM
+                cities
+            JOIN
+                states
+            ON
+                cities.state_id = states.id
+            WHERE
+                states.name LIKE BINARY %(state_name)s
+            ORDER BY
+                cities.id ASC
+        """, {
+            'state_name': argv[4]
+        })
 
-    result = cursor.fetchone()[0]
-    print(result if result else "")
+        rows = cur.fetchall()
 
-    cursor.close()
-    db.close()
+    if rows is not None:
+        print(", ".join([row[1] for row in rows]))
+        
