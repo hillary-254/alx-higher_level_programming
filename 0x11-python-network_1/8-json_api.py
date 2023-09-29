@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module sends a POST request to http://0.0.0.0:5000/search_user with a letter as a parameter.
+This module sends a POST request to http://0.0.0.0:5000/search_user with
+a letter as a parameter.
 """
 
 import requests

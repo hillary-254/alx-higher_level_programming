@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module sends a POST request with an email parameter to a URL and displays the response body.
+This module sends a POST request with an email parameter to a URL and
+displays the response body.
 """
 
 import requests

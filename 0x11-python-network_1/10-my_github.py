@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module uses the GitHub API to display your GitHub user ID using Basic Authentication.
+This module uses the GitHub API to display your GitHub user ID using
+Basic Authentication.
 """
 
 import requests
